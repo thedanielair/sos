@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'sos-font';
+  src:  url('../fonts/sos-font.eot?qqohi0');
+  src:  url('../fonts/sos-font.eot?qqohi0#iefix') format('embedded-opentype'),
+    url('../fonts/sos-font.ttf?qqohi0') format('truetype'),
+    url('../fonts/sos-font.woff?qqohi0') format('woff'),
+    url('../fonts/sos-font.svg?qqohi0#sos-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="i-"], [class*=" i-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sos-font' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.i-triangle:before {
+  content: "\e900";
+  color: #fff;
+}
+.i-facebook:before {
+  content: "\e901";
+  color: #fff;
+}
+.i-twitter:before {
+  content: "\e902";
+  color: #fff;
+}
+.i-youtube:before {
+  content: "\e903";
+  color: #fff;
+}
+.i-twitch:before {
+  content: "\e904";
+  color: #fff;
+}
+.i-xbox-icon:before {
+  content: "\e905";
+  color: #fff;
+}
+.i-steam-icon:before {
+  content: "\e906";
+  color: #fff;
+}

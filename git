@@ -1,0 +1,968 @@
+[33mcommit 0f80d8a43e805ba9428f30a61abdbfb1458bdec4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: danielair <thedanielair@mail.ru>
+Date:   Sat Dec 11 16:44:59 2021 +0300
+
+    Start after html&css work
+
+[1mdiff --git a/css/fonts.css b/css/fonts.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e6f5220[m
+[1m--- /dev/null[m
+[1m+++ b/css/fonts.css[m
+[36m@@ -0,0 +1,55 @@[m
+[32m+[m[32m@font-face {[m
+[32m+[m[32m  font-family: 'sos-font';[m
+[32m+[m[32m  src:  url('../fonts/sos-font.eot?qqohi0');[m
+[32m+[m[32m  src:  url('../fonts/sos-font.eot?qqohi0#iefix') format('embedded-opentype'),[m
+[32m+[m[32m    url('../fonts/sos-font.ttf?qqohi0') format('truetype'),[m
+[32m+[m[32m    url('../fonts/sos-font.woff?qqohi0') format('woff'),[m
+[32m+[m[32m    url('../fonts/sos-font.svg?qqohi0#sos-font') format('svg');[m
+[32m+[m[32m  font-weight: normal;[m
+[32m+[m[32m  font-style: normal;[m
+[32m+[m[32m  font-display: block;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m[class^="i-"], [class*=" i-"] {[m
+[32m+[m[32m  /* use !important to prevent issues with browser extensions that change fonts */[m
+[32m+[m[32m  font-family: 'sos-font' !important;[m
+[32m+[m[32m  speak: never;[m
+[32m+[m[32m  font-style: normal;[m
+[32m+[m[32m  font-weight: normal;[m
+[32m+[m[32m  font-variant: normal;[m
+[32m+[m[32m  text-transform: none;[m
+[32m+[m[32m  line-height: 1;[m
+[32m+[m
+[32m+[m[32m  /* Better Font Rendering =========== */[m
+[32m+[m[32m  -webkit-font-smoothing: antialiased;[m
+[32m+[m[32m  -moz-osx-font-smoothing: grayscale;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.i-triangle:before {[m
+[32m+[m[32m  content: "\e900";[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m}[m
+[32m+[m[32m.i-facebook:before {[m
+[32m+[m[32m  content: "\e901";[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m}[m
+[32m+[m[32m.i-twitter:before {[m
+[32m+[m[32m  content: "\e902";[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m}[m
+[32m+[m[32m.i-youtube:before {[m
+[32m+[m[32m  content: "\e903";[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m}[m
+[32m+[m[32m.i-twitch:before {[m
+[32m+[m[32m  content: "\e904";[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m}[m
+[32m+[m[32m.i-xbox-icon:before {[m
+[32m+[m[32m  content: "\e905";[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m}[m
+[32m+[m[32m.i-steam-icon:before {[m
+[32m+[m[32m  content: "\e906";[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m}[m
+[1mdiff --git a/css/nullstyle.css b/css/nullstyle.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..16d3c2d[m
+[1m--- /dev/null[m
+[1m+++ b/css/nullstyle.css[m
+[36m@@ -0,0 +1,74 @@[m
+[32m+[m[32m/*Null*/[m
+[32m+[m[32m* {[m
+[32m+[m[32m  padding: 0;[m
+[32m+[m[32m  margin: 0;[m
+[32m+[m[32m  border: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m*, *:before, *:after {[m
+[32m+[m[32m  -webkit-box-sizing: border-box;[m
+[32m+[m[32m  box-sizing: border-box;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m:focus, :active {[m
+[32m+[m[32m  outline: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32ma:focus, a:active {[m
+[32m+[m[32m  outline: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mnav, footer, header, aside {[m
+[32m+[m[32m  display: block;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mhtml, body {[m
+[32m+[m[32m  height: 100%;[m
+[32m+[m[32m  width: 100%;[m
+[32m+[m[32m  font-size: 100%;[m
+[32m+[m[32m  line-height: 1;[m
+[32m+[m[32m  font-size: 14px;[m
+[32m+[m[32m  -ms-text-size-adjust: 100%;[m
+[32m+[m[32m  -moz-text-size-adjust: 100%;[m
+[32m+[m[32m  -webkit-text-size-adjust: 100%;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32minput, button, textarea {[m
+[32m+[m[32m  font-family: inherit;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32minput::-ms-clear {[m
+[32m+[m[32m  display: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbutton {[m
+[32m+[m[32m  cursor: pointer;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbutton::-moz-focus-inner {[m
+[32m+[m[32m  padding: 0;[m
+[32m+[m[32m  border: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32ma, a:visited {[m
+[32m+[m[32m  text-decoration: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32ma:hover {[m
+[32m+[m[32m  text-decoration: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mul li {[m
+[32m+[m[32m  list-style: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mimg {[m
+[32m+[m[32m  vertical-align: top;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mh1, h2, h3, h4, h5, h6 {[m
+[32m+[m[32m  font-size: inherit;[m
+[32m+[m[32m  font-weight: inherit;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m/*Null End*/[m
+[1mdiff --git a/css/style.css b/css/style.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..04c64ec[m
+[1m--- /dev/null[m
+[1m+++ b/css/style.css[m
+[36m@@ -0,0 +1,1037 @@[m
+[32m+[m[32m/*Null*/[m
+[32m+[m[32m* {[m
+[32m+[m[32m  padding: 0;[m
+[32m+[m[32m  margin: 0;[m
+[32m+[m[32m  border: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m*, *:before, *:after {[m
+[32m+[m[32m  -webkit-box-sizing: border-box;[m
+[32m+[m[32m  box-sizing: border-box;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m:focus, :active {[m
+[32m+[m[32m  outline: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32ma:focus, a:active {[m
+[32m+[m[32m  outline: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mnav, footer, header, aside {[m
+[32m+[m[32m  display: block;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mhtml, body {[m
+[32m+[m[32m  height: 100%;[m
+[32m+[m[32m  width: 100%;[m
+[32m+[m[32m  font-size: 100%;[m
+[32m+[m[32m  line-height: 1;[m
+[32m+[m[32m  font-size: 14px;[m
+[32m+[m[32m  -ms-text-size-adjust: 100%;[m
+[32m+[m[32m  -moz-text-size-adjust: 100%;[m
+[32m+[m[32m  -webkit-text-size-adjust: 100%;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32minput, button, textarea {[m
+[32m+[m[32m  font-family: inherit;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32minput::-ms-clear {[m
+[32m+[m[32m  display: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbutton {[m
+[32m+[m[32m  cursor: pointer;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbutton::-moz-focus-inner {[m
+[32m+[m[32m  padding: 0;[m
+[32m+[m[32m  border: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32ma, a:visited {[m
+[32m+[m[32m  text-decoration: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32ma:hover {[m
+[32m+[m[32m  text-decoration: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mul li {[m
+[32m+[m[32m  list-style: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mimg {[m
+[32m+[m[32m  vertical-align: top;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mh1, h2, h3, h4, h5, h6 {[m
+[32m+[m[32m  font-size: inherit;[m
+[32m+[m[32m  font-weight: inherit;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m/*Null End*/[m
+[32m+[m[32mbody {[m
+[32m+[m[32m  background-color: #08121b;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.wrapper {[m
+[32m+[m[32m  width: 1200px;[m
+[32m+[m[32m  margin-left: auto;[m
+[32m+[m[32m  margin-right: auto;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title {[m
+[32m+[m[32m  font-family: "Bebas Neue", cursive;[m
+[32m+[m[32m  font-size: 80px;[m
+[32m+[m[32m  line-height: 100%;[m
+[32m+[m[32m  letter-spacing: 3px;[m
+[32m+[m[32m  text-transform: uppercase;[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.caption {[m
+[32m+[m[32m  font-family: "Bebas Neue", cursive;[m
+[32m+[m[32m  font-size: 24px;[m
+[32m+[m[32m  line-height: 100%;[m
+[32m+[m[32m  letter-spacing: 2px;[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m  margin-bottom: 10px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.text {[m
+[32m+[m[32m  font-family: "Open Sans", sans-serif;[m
+[32m+[m[32m  font-weight: 400;[m
+[32m+[m[32m  font-size: 18px;[m
+[32m+[m[32m  line-height: 122%;[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.button {[m
+[32m+[m[32m  display: block;[m
+[32m+[m[32m  font-family: "Open Sans", sans-serif;[m
+[32m+[m[32m  font-weight: 700;[m
+[32m+[m[32m  font-size: 16px;[m
+[32m+[m[32m  line-height: 130%;[m
+[32m+[m[32m  color: #000;[m
+[32m+[m[32m  text-align: center;[m
+[32m+[m[32m  width: 260px;[m
+[32m+[m[32m  height: 60px;[m
+[32m+[m[32m  background: linear-gradient(194.68deg, #ffb548 11.27%, #f3af34 90.4%);[m
+[32m+[m[32m  border-radius: 4px;[m
+[32m+[m[32m  padding-top: 19px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.header {[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  top: 20px;[m
+[32m+[m[32m  right: 0;[m
+[32m+[m[32m  left: 0;[m
+[32m+[m[32m  z-index: 99;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.header__wrapper {[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-align: center;[m
+[32m+[m[32m      -ms-flex-align: center;[m
+[32m+[m[32m          align-items: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.header__logo {[m
+[32m+[m[32m  width: 55px;[m
+[32m+[m[32m  height: 55px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.header__nav {[m
+[32m+[m[32m  margin: 0 auto;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.header__social {[m
+[32m+[m[32m  margin-left: auto;[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-align: center;[m
+[32m+[m[32m      -ms-flex-align: center;[m
+[32m+[m[32m          align-items: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.header__lang {[m
+[32m+[m[32m  margin-right: 25px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.nav {[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.nav__link {[m
+[32m+[m[32m  font-family: "Open Sans", sans-serif;[m
+[32m+[m[32m  font-weight: 700;[m
+[32m+[m[32m  font-size: 12px;[m
+[32m+[m[32m  margin-right: 50px;[m
+[32m+[m[32m  text-transform: uppercase;[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m  -webkit-transition: color 0.3s ease;[m
+[32m+[m[32m  transition: color 0.3s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.nav__link:last-child {[m
+[32m+[m[32m  margin-right: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.nav__link:hover {[m
+[32m+[m[32m  color: #ffb548;[m
+[32m+[m[32m  text-shadow: 2px 2px 8px #61100c57;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang {[m
+[32m+[m[32m  border-right: 1px solid rgba(255, 255, 255, 0.5);[m
+[32m+[m[32m  padding: 8px 20px 8px 0;[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__active {[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-align: center;[m
+[32m+[m[32m      -ms-flex-align: center;[m
+[32m+[m[32m          align-items: center;[m
+[32m+[m[32m  padding-right: 20px;[m
+[32m+[m[32m  cursor: pointer;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__active:hover .lang__ico::before {[m
+[32m+[m[32m  background-color: #ffb548;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__active:hover .lang__ico::after {[m
+[32m+[m[32m  background-color: #ffb548;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__active:hover .lang__status {[m
+[32m+[m[32m  color: #ffb548;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__body {[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  top: 40px;[m
+[32m+[m[32m  left: -10px;[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-orient: vertical;[m
+[32m+[m[32m  -webkit-box-direction: normal;[m
+[32m+[m[32m      -ms-flex-direction: column;[m
+[32m+[m[32m          flex-direction: column;[m
+[32m+[m[32m  padding: 5px 30px 5px 10px;[m
+[32m+[m[32m  background-color: rgba(0, 0, 0, 0.75);[m
+[32m+[m[32m  border-radius: 3px;[m
+[32m+[m[32m  opacity: 0;[m
+[32m+[m[32m  visibility: hidden;[m
+[32m+[m[32m  -webkit-transform: translateY(-10px);[m
+[32m+[m[32m          transform: translateY(-10px);[m
+[32m+[m[32m  -webkit-transition: all 0.3s ease;[m
+[32m+[m[32m  transition: all 0.3s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__body .lang__status {[m
+[32m+[m[32m  padding-bottom: 3px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__body .lang__status:hover {[m
+[32m+[m[32m  color: #ffb548;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__status {[m
+[32m+[m[32m  font-family: "Open Sans", sans-serif;[m
+[32m+[m[32m  font-weight: 700;[m
+[32m+[m[32m  font-size: 12px;[m
+[32m+[m[32m  line-height: 122%;[m
+[32m+[m[32m  text-transform: uppercase;[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m  cursor: pointer;[m
+[32m+[m[32m  -webkit-transition: color 0.3s ease;[m
+[32m+[m[32m  transition: color 0.3s ease;[m
+[32m+[m[32m  -ms-user-select: none;[m
+[32m+[m[32m  -moz-user-select: none;[m
+[32m+[m[32m  -khtml-user-select: none;[m
+[32m+[m[32m  -webkit-user-select: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__ico {[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  left: 30px;[m
+[32m+[m[32m  width: 14px;[m
+[32m+[m[32m  height: 7px;[m
+[32m+[m[32m  -webkit-transition: all 0.3s ease;[m
+[32m+[m[32m  transition: all 0.3s ease;[m
+[32m+[m[32m  text-align: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__ico::before {[m
+[32m+[m[32m  content: "";[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  left: 0;[m
+[32m+[m[32m  top: 50%;[m
+[32m+[m[32m  width: 8px;[m
+[32m+[m[32m  height: 2px;[m
+[32m+[m[32m  background-color: #fff;[m
+[32m+[m[32m  -webkit-transform: rotate(45deg) translateY(-50%);[m
+[32m+[m[32m          transform: rotate(45deg) translateY(-50%);[m
+[32m+[m[32m  border-radius: 4px;[m
+[32m+[m[32m  -webkit-transition: all 0.3s ease;[m
+[32m+[m[32m  transition: all 0.3s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang__ico::after {[m
+[32m+[m[32m  content: "";[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  right: 0;[m
+[32m+[m[32m  top: 50%;[m
+[32m+[m[32m  width: 8px;[m
+[32m+[m[32m  height: 2px;[m
+[32m+[m[32m  background-color: #fff;[m
+[32m+[m[32m  -webkit-transform: rotate(-45deg) translateY(-50%);[m
+[32m+[m[32m          transform: rotate(-45deg) translateY(-50%);[m
+[32m+[m[32m  border-radius: 4px;[m
+[32m+[m[32m  -webkit-transition: all 0.3s ease;[m
+[32m+[m[32m  transition: all 0.3s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang.active .lang__active .lang__ico::before {[m
+[32m+[m[32m  background-color: #ffb548;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang.active .lang__active .lang__ico::after {[m
+[32m+[m[32m  background-color: #ffb548;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang.active .lang__active .lang__status {[m
+[32m+[m[32m  color: #ffb548;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang.active .lang__ico {[m
+[32m+[m[32m  left: 33px;[m
+[32m+[m[32m  width: 9.5px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.lang.active .lang__body {[m
+[32m+[m[32m  opacity: 1;[m
+[32m+[m[32m  visibility: visible;[m
+[32m+[m[32m  -webkit-transform: translateY(0px);[m
+[32m+[m[32m          transform: translateY(0px);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.playgrounds {[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-align: center;[m
+[32m+[m[32m      -ms-flex-align: center;[m
+[32m+[m[32m          align-items: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.playgrounds__link {[m
+[32m+[m[32m  margin-right: 17px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.playgrounds__link::before {[m
+[32m+[m[32m  display: block;[m
+[32m+[m[32m  font-family: "sos-font";[m
+[32m+[m[32m  color: #ffb548;[m
+[32m+[m[32m  font-size: 30px;[m
+[32m+[m[32m  font-weight: 100%;[m
+[32m+[m[32m  -webkit-transition: all 0.3s ease;[m
+[32m+[m[32m  transition: all 0.3s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.playgrounds__link:nth-child(1)::before {[m
+[32m+[m[32m  content: "\e905";[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.playgrounds__link:nth-child(2)::before {[m
+[32m+[m[32m  content: "\e906";[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.playgrounds__link:last-child {[m
+[32m+[m[32m  margin-right: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.playgrounds__link:hover::before {[m
+[32m+[m[32m  -webkit-transform: scale(1.15);[m
+[32m+[m[32m          transform: scale(1.15);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block {[m
+[32m+[m[32m  height: 100vh;[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m  background-image: url(../img/title-bg.png);[m
+[32m+[m[32m  background-repeat: no-repeat;[m
+[32m+[m[32m  background-size: cover;[m
+[32m+[m[32m  background-position: center center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block::before {[m
+[32m+[m[32m  content: "";[m
+[32m+[m[32m  width: 100%;[m
+[32m+[m[32m  height: 100%;[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  top: 0;[m
+[32m+[m[32m  right: 0;[m
+[32m+[m[32m  bottom: 0;[m
+[32m+[m[32m  left: 0;[m
+[32m+[m[32m  background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090a 99.74%);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block__info {[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  top: 50%;[m
+[32m+[m[32m  left: 50%;[m
+[32m+[m[32m  -webkit-transform: translate(-50%, -50%);[m
+[32m+[m[32m          transform: translate(-50%, -50%);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block__title {[m
+[32m+[m[32m  margin-bottom: 8px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block__caption {[m
+[32m+[m[32m  text-align: center;[m
+[32m+[m[32m  margin-bottom: 28px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block__button {[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-align: center;[m
+[32m+[m[32m      -ms-flex-align: center;[m
+[32m+[m[32m          align-items: center;[m
+[32m+[m[32m  -webkit-box-pack: center;[m
+[32m+[m[32m      -ms-flex-pack: center;[m
+[32m+[m[32m          justify-content: center;[m
+[32m+[m[32m  margin: 0 auto;[m
+[32m+[m[32m  padding-top: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block__button-info {[m
+[32m+[m[32m  margin-right: 12px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block__button-divide {[m
+[32m+[m[32m  height: 23px;[m
+[32m+[m[32m  width: 1px;[m
+[32m+[m[32m  background-color: rgba(0, 0, 0, 0.5);[m
+[32m+[m[32m  -webkit-transform: rotate(-3deg);[m
+[32m+[m[32m          transform: rotate(-3deg);[m
+[32m+[m[32m  margin-right: 15px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block__scroll {[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  left: 50%;[m
+[32m+[m[32m  bottom: 5%;[m
+[32m+[m[32m  -webkit-transform: translateX(-50%);[m
+[32m+[m[32m          transform: translateX(-50%);[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-orient: vertical;[m
+[32m+[m[32m  -webkit-box-direction: normal;[m
+[32m+[m[32m      -ms-flex-direction: column;[m
+[32m+[m[32m          flex-direction: column;[m
+[32m+[m[32m  -webkit-box-align: center;[m
+[32m+[m[32m      -ms-flex-align: center;[m
+[32m+[m[32m          align-items: center;[m
+[32m+[m[32m  cursor: pointer;[m
+[32m+[m[32m  -webkit-transition: all 0.3s ease;[m
+[32m+[m[32m  transition: all 0.3s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block__scroll:hover {[m
+[32m+[m[32m  -webkit-transform: translateX(-50%) translateY(-8px);[m
+[32m+[m[32m          transform: translateX(-50%) translateY(-8px);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block__scroll-title {[m
+[32m+[m[32m  font-family: "Open Sans", sans-serif;[m
+[32m+[m[32m  font-weight: 700;[m
+[32m+[m[32m  font-size: 12px;[m
+[32m+[m[32m  text-align: center;[m
+[32m+[m[32m  text-transform: uppercase;[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m  margin-bottom: 5px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-block__scroll-arrow::before {[m
+[32m+[m[32m  font-family: "sos-font";[m
+[32m+[m[32m  content: "\e900";[m
+[32m+[m[32m  color: #fff;[m
+[32m+[m[32m  font-size: 10px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about {[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m  padding: 200px 0 232px 0;[m
+[32m+[m[32m  background-image: url(../img/about-bg.png);[m
+[32m+[m[32m  background-position: center;[m
+[32m+[m[32m  background-size: cover;[m
+[32m+[m[32m  background-repeat: no-repeat;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about::before, .about::after {[m
+[32m+[m[32m  content: "";[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  top: 0;[m
+[32m+[m[32m  right: 0;[m
+[32m+[m[32m  bottom: 0;[m
+[32m+[m[32m  left: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about::after {[m
+[32m+[m[32m  background: radial-gradient(136.03% 54.57% at 50% 48.04%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 60.63%, #08090a 84%);[m
+[32m+[m[32m  z-index: 2;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about::before {[m
+[32m+[m[32m  background: #0f0f0f;[m
+[32m+[m[32m  opacity: 0.9;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about__wrapper {[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-align: center;[m
+[32m+[m[32m      -ms-flex-align: center;[m
+[32m+[m[32m          align-items: center;[m
+[32m+[m[32m  -webkit-box-pack: justify;[m
+[32m+[m[32m      -ms-flex-pack: justify;[m
+[32m+[m[32m          justify-content: space-between;[m
+[32m+[m[32m  -ms-flex-wrap: nowrap;[m
+[32m+[m[32m      flex-wrap: nowrap;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about__info {[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m  -ms-flex-preferred-size: 47%;[m
+[32m+[m[32m      flex-basis: 47%;[m
+[32m+[m[32m  z-index: 10;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about__title {[m
+[32m+[m[32m  padding-bottom: 10px;[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m  margin-bottom: 60px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about__title::after {[m
+[32m+[m[32m  content: "";[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  bottom: 0;[m
+[32m+[m[32m  left: 0;[m
+[32m+[m[32m  background-color: #fff;[m
+[32m+[m[32m  width: 130%;[m
+[32m+[m[32m  height: 3px;[m
+[32m+[m[32m  border-radius: 4px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about__text {[m
+[32m+[m[32m  width: 63%;[m
+[32m+[m[32m  margin-left: auto;[m
+[32m+[m[32m  text-align: justify;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about__text::after {[m
+[32m+[m[32m  content: "";[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  right: 12%;[m
+[32m+[m[32m  bottom: 0;[m
+[32m+[m[32m  width: 122px;[m
+[32m+[m[32m  height: 6px;[m
+[32m+[m[32m  background-color: #ffb548;[m
+[32m+[m[32m  z-index: -1;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.about__slider {[m
+[32m+[m[32m  -ms-flex-preferred-size: 53%;[m
+[32m+[m[32m      flex-basis: 53%;[m
+[32m+[m[32m  height: 610px;[m
+[32m+[m[32m  z-index: 10;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.features {[m
+[32m+[m[32m  padding: 170px 0 258px 0;[m
+[32m+[m[32m  background-image: url(../img/features-bg.png);[m
+[32m+[m[32m  background-position: top;[m
+[32m+[m[32m  background-size: cover;[m
+[32m+[m[32m  background-repeat: no-repeat;[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m  z-index: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.features::before {[m
+[32m+[m[32m  content: "";[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  top: 0;[m
+[32m+[m[32m  right: 0;[m
+[32m+[m[32m  bottom: 0;[m
+[32m+[m[32m  left: 0;[m
+[32m+[m[32m  background: radial-gradient(51.1% 80.48% at 30.85% 53.65%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080a0b 99.74%);[m
+[32m+[m[32m  z-index: -1;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.features__info {[m
+[32m+[m[32m  width: 34%;[m
+[32m+[m[32m  margin-left: auto;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.features__title {[m
+[32m+[m[32m  margin-bottom: 70px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.feature {[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  margin-bottom: 30px;[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.feature::before, .feature::after {[m
+[32m+[m[32m  content: "";[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m  top: 10px;[m
+[32m+[m[32m  width: 14px;[m
+[32m+[m[32m  height: 14px;[m
+[32m+[m[32m  border-radius: 50%;[m
+[32m+[m[32m  border: 2px solid #fff;[m
+[32m+[m[32m  margin-right: 30px;[m
+[32m+[m[32m  -webkit-box-flex: 0;[m
+[32m+[m[32m      -ms-flex: 0 0 auto;[m
+[32m+[m[32m          flex: 0 0 auto;[m
+[32m+[m[32m  -webkit-transition: all 0.3s ease;[m
+[32m+[m[32m  transition: all 0.3s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.feature::after {[m
+[32m+[m[32m  background-color: #fff;[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  top: 10px;[m
+[32m+[m[32m  opacity: 0;[m
+[32m+[m[32m  opacity: 1;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.feature__title {[m
+[32m+[m[32m  font-family: "Bebas Neue", cursive;[m
+[32m+[m[32m  text-transform: uppercase;[m
+[32m+[m[32m  font-size: 36px;[m
+[32m+[m[32m  line-height: 100%;[m
+[32m+[m[32m  letter-spacing: 2px;[m
+[32m+[m[32m  color: #ffb548;[m
+[32m+[m[32m  margin-bottom: 5px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.feature__text {[m
+[32m+[m[32m  text-align: justify;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.requirements {[m
+[32m+[m[32m  padding: 145px 0 170px 0;[m
+[32m+[m[32m  background-image: url(../img/requirements-bg.png);[m
+[32m+[m[32m  background-position: center;[m
+[32m+[m[32m  background-size: cover;[m
+[32m+[m[32m  background-repeat: no-repeat;[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m  z-index: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.requirements::before {[m
+[32m+[m[32m  content: "";[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  top: 0;[m
+[32m+[m[32m  right: 0;[m
+[32m+[m[32m  bottom: 0;[m
+[32m+[m[32m  left: 0;[m
+[32m+[m[32m  background: radial-gradient(33.26% 45% at 64.32% 47.1%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%);[m
+[32m+[m[32m  z-index: -1;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.requirements__header {[m
+[32m+[m[32m  margin-bottom: 133px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.requirements__caption {[m
+[32m+[m[32m  text-align: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.requirements__title {[m
+[32m+[m[32m  text-align: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.requirements__table {[m
+[32m+[m[32m  display: -ms-grid;[m
+[32m+[m[32m  display: grid;[m
+[32m+[m[32m  width: 50%;[m
+[32m+[m[32m  -ms-grid-columns: (1fr)[2];[m
+[32m+[m[32m      grid-template-columns: repeat(2, 1fr);[m
+[32m+[m[32m  -ms-grid-rows: (1fr)[3];[m
+[32m+[m[32m      grid-template-rows: repeat(3, 1fr);[m
+[32m+[m[32m  border: 1px solid #979797;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.requirements__table-item:nth-child(odd), .requirements__table-item:nth-child(even) {[m
+[32m+[m[32m  border-bottom: 1px solid #979797;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.requirements__table-item:nth-child(odd) {[m
+[32m+[m[32m  border-right: 1px solid #979797;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.requirements__table-item:nth-child(5) {[m
+[32m+[m[32m  grid-column: span 2;[m
+[32m+[m[32m  border: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.table-item {[m
+[32m+[m[32m  padding: 14px 20px 30px 20px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.table-item__title {[m
+[32m+[m[32m  font-family: "Bebas Neue", cursive;[m
+[32m+[m[32m  text-transform: uppercase;[m
+[32m+[m[32m  font-size: 24px;[m
+[32m+[m[32m  line-height: 100%;[m
+[32m+[m[32m  letter-spacing: 2px;[m
+[32m+[m[32m  color: #ffb548;[m
+[32m+[m[32m  margin-bottom: 8px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quotes {[m
+[32m+[m[32m  padding: 160px 0 150px 0;[m
+[32m+[m[32m  background-image: url(../img/quotes-bg.png);[m
+[32m+[m[32m  background-position: center;[m
+[32m+[m[32m  background-size: cover;[m
+[32m+[m[32m  background-repeat: no-repeat;[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m  z-index: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quotes::before {[m
+[32m+[m[32m  content: "";[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  top: 0;[m
+[32m+[m[32m  right: 0;[m
+[32m+[m[32m  bottom: 0;[m
+[32m+[m[32m  left: 0;[m
+[32m+[m[32m  background: radial-gradient(70.52% 37.27% at 24.21% 47.47%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 51.1%, #080a0b 99.74%);[m
+[32m+[m[32m  z-index: -1;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quotes__wrapper {[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-pack: justify;[m
+[32m+[m[32m      -ms-flex-pack: justify;[m
+[32m+[m[32m          justify-content: space-between;[m
+[32m+[m[32m  -webkit-box-align: center;[m
+[32m+[m[32m      -ms-flex-align: center;[m
+[32m+[m[32m          align-items: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quotes__info {[m
+[32m+[m[32m  -ms-flex-preferred-size: 35%;[m
+[32m+[m[32m      flex-basis: 35%;[m
+[32m+[m[32m  z-index: 99;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quotes__title {[m
+[32m+[m[32m  margin-bottom: 60px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quotes__text {[m
+[32m+[m[32m  margin-bottom: 45px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quotes__quotes {[m
+[32m+[m[32m  -ms-flex-preferred-size: 50%;[m
+[32m+[m[32m      flex-basis: 50%;[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-orient: vertical;[m
+[32m+[m[32m  -webkit-box-direction: normal;[m
+[32m+[m[32m      -ms-flex-direction: column;[m
+[32m+[m[32m          flex-direction: column;[m
+[32m+[m[32m  -webkit-box-align: end;[m
+[32m+[m[32m      -ms-flex-align: end;[m
+[32m+[m[32m          align-items: flex-end;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quotes__item {[m
+[32m+[m[32m  margin-bottom: 30px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quotes__item:nth-child(even) {[m
+[32m+[m[32m  -ms-flex-item-align: start;[m
+[32m+[m[32m      align-self: flex-start;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quotes__item:last-child {[m
+[32m+[m[32m  margin-bottom: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quote {[m
+[32m+[m[32m  width: 452px;[m
+[32m+[m[32m  padding: 15px 21px 21px 17px;[m
+[32m+[m[32m  background: rgba(255, 255, 255, 0.08);[m
+[32m+[m[32m  border-radius: 10px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quote__header {[m
+[32m+[m[32m  display: -webkit-box;[m
+[32m+[m[32m  display: -ms-flexbox;[m
+[32m+[m[32m  display: flex;[m
+[32m+[m[32m  -webkit-box-align: center;[m
+[32m+[m[32m      -ms-flex-align: center;[m
+[32m+[m[32m          align-items: center;[m
+[32m+[m[32m  margin-bottom: 22px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quote__img-wrapper::before, .quote__img {[m
+[32m+[m[32m  width: 65px;[m
+[32m+[m[32m  height: 65px;[m
+[32m+[m[32m  border-radius: 50%;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.quote__img-wrapper {[m
+[32m+[m[32m  position: relativ
