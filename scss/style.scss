@@ -453,7 +453,11 @@ body {
 }
 
 .features {
-    padding: 170px 0 258px 0;
+    // padding: 170px 0 258px 0;
+
+    padding-top: 170px;
+    height: 888px;
+
     background-image: url(../img/features-bg.png);
     background-position: top;
     background-size: cover;
@@ -502,26 +506,50 @@ body {
     display: flex;
     margin-bottom: 30px;
     position: relative;
-    &::before,
-    &::after {
-        content: "";
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &__decoration {
+        margin-right: 30px;
+    }
+
+    &__point {
         position: relative;
         top: 10px;
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        border: 2px solid #fff;
-        margin-right: 30px;
-        flex: 0 0 auto;
-        transition: all 0.3s ease;
+        &::before {
+            position: relative;
+        }
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            transition: all 0.3s ease;
+        }
+        &::after {
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            opacity: 0;
+        }
     }
-    &::after {
-        background-color: #fff;
-        position: absolute;
-        top: 10px;
-        opacity: 0;
-        opacity: 1;
+
+    &--active {
+        .feature {
+            &__text {
+                display: block;
+            }
+            &__point {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
     }
+
     &__info {
     }
 
@@ -534,10 +562,14 @@ body {
         color: #ffb548;
 
         margin-bottom: 5px;
+        user-select: none;
     }
 
     &__text {
+        display: block;
         text-align: justify;
+        transition: all 0.3s ease;
+        overflow: hidden;
     }
 }
 
