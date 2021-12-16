@@ -45,36 +45,120 @@ langSwitchActive.addEventListener("click", function() {
 
 
 
-let featureItems = document.querySelectorAll('.feature');
-let featureItemsArr = [];
+// let featureItems = document.querySelectorAll('.feature');
+// let featureItemsArr = [];
 // let active = null;
-// let active2 = null;
-featureItems.forEach(function(item, i){
-    featureItemsArr.push(item);
-})
+// // let active2 = null;
+// featureItems.forEach(function(item, i){
+//     featureItemsArr.push(item);
+// })
 
-featureItemsArr.forEach(function(item,i){
-    let text = item.lastElementChild.lastElementChild;
+// function turnUp(obj) {
+//     obj.style.maxHeight = "0px";
+//     active = null;
+//     console.log('я нулевый чел')
+// }
+
+// featureItemsArr.forEach(function(item,i){
+//     let text = item.lastElementChild.lastElementChild;
     
-    text.style.maxHeight = 0 + 'px';
-    item.addEventListener("click", () => {
-      if (!item.classList.contains('feature--disabled')) {
-        item.classList.toggle('feature--active');
-        if (text.style.maxHeight !== "0px") {
-          text.style.maxHeight = "0px";
-          active = null;
-        //   console.log(active);
-        } else {
-          text.style.maxHeight = text.scrollHeight + 'px';
-          active = i;
-        //   console.log(active);
-        //   if (active !== null) {
-        //       console.log(featureItemsArr[active]);
-        //       console.log(active);
-            // featureItemsArr[active].classList.toggle('feature--active');
-        //   }
-          
-        }
-      }
-    });
+//     text.style.maxHeight = 0 + 'px';
+//     item.addEventListener("click", () => {
+//       if (!item.classList.contains('feature--disabled')) {
+//         item.classList.toggle('feature--active');
+//         if (!item.classList.contains('feature--active')) {
+//           turnUp(text);
+//         } else {
+//           text.style.maxHeight = text.scrollHeight + 'px';
+//           if (active !== null) {
+//               featureItemsArr[active].classList.toggle('feature--active');
+//               turnUp(text);
+//               active = i; 
+//           } else { 
+//               active = i;
+//               console.log('я взял номер')
+//           } 
+//         }
+//       }
+//     });
+// })
+
+
+
+//===================================//
+
+
+function massivePush(list, massive) {
+    list.forEach(function(item){
+    massive.push(item);
+    return massive;
 })
+}
+//-----------------------------------//
+let featureArr = [];     //main massive
+const FEATURE_ITEMS = document.querySelectorAll('.feature');
+const FEATURE_TEXTS = document.querySelectorAll('.feature__text');
+const FEATURE_POINTS = document.querySelectorAll('.feature__point');
+//-----------------------------------//
+const createArr = function() {
+    //obj
+    let featureItemsArr = [];
+    massivePush(FEATURE_ITEMS, featureItemsArr);
+    //text
+    let featureTextsArr = [];
+    massivePush(FEATURE_TEXTS, featureTextsArr);
+    //point   
+    let featurePointsArr = [];
+    massivePush(FEATURE_POINTS, featurePointsArr);
+    //massive push
+    featureItemsArr.forEach((item, i) => {
+        let feature = {};
+
+        feature.elem = item;
+        feature.text = featureTextsArr[i];
+        feature.point = featurePointsArr[i];
+
+        featureArr[i] = feature;
+    });
+};
+createArr();
+console.log(featureArr);
+
+
+//===================================//
+
+
+function collapseUp(obj) {
+    obj.style.maxHeight = "0px";
+}
+function collapseDown(obj) {
+    obj.style.maxHeight = obj.scrollHeight + 'px';
+}
+function toggleClass(obj, className) {
+    obj.classList.toggle(className);
+}
+function collapseToggle(parent, content, className) {
+    toggleClass(parent, className);
+    if (parent.classList.contains(className)) {
+        collapseDown(content);
+    } else {
+        collapseUp(content);
+    }
+}
+function listenClick(item, className) {
+    item.elem.addEventListener("click", () => {
+        collapseToggle(item.elem, item.text, className)
+    });
+}
+
+
+//-----------------------------------//
+
+
+function acc(massive, className) {
+    for (i=0;i<massive.length;i++) {
+        collapseUp(massive[i].text);
+        listenClick(massive[i], className);  
+    };
+}
+acc(featureArr, "feature--active");
