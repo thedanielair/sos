@@ -45,9 +45,15 @@ body {
     text-align: center;
     width: 260px;
     height: 60px;
-    background: linear-gradient(194.68deg, #ffb548 11.27%, #f3af34 90.4%);
+    background: linear-gradient(194.68deg, #ffb548 11.27%, #f39a34 90.4%);
     border-radius: 4px;
     padding-top: 19px;
+    transition: all 0.3s ease;
+    &:hover {
+        box-shadow: 3px 3px 35px #ffcc5f3b;
+        // box-shadow: 5px 5px 35px #69150d69;
+        // transform: scale(1.02);
+    }
 }
 
 .header {
