@@ -85,8 +85,7 @@ langSwitchActive.addEventListener("click", function() {
 
 
 
-//===================================//
-
+//==============================================//
 
 function massivePush(list, massive) {
     list.forEach(function(item){
@@ -94,12 +93,12 @@ function massivePush(list, massive) {
     return massive;
 })
 }
-//-----------------------------------//
+//------------------------------------//
 let featureArr = [];     //main massive
 const FEATURE_ITEMS = document.querySelectorAll('.feature');
 const FEATURE_TEXTS = document.querySelectorAll('.feature__text');
 const FEATURE_POINTS = document.querySelectorAll('.feature__point');
-//-----------------------------------//
+//------------------------------------//
 const createArr = function() {
     //obj
     let featureItemsArr = [];
@@ -124,9 +123,9 @@ const createArr = function() {
 createArr();
 console.log(featureArr);
 
+//----------------------------------------------//
 
-//===================================//
-
+//----------------------------------------------//
 
 function collapseUp(obj) {
     obj.style.maxHeight = "0px";
@@ -145,20 +144,21 @@ function collapseToggle(parent, content, className) {
         collapseUp(content);
     }
 }
-function listenClick(item, className) {
+function listenClick(massive, item, className, i) {
     item.elem.addEventListener("click", () => {
         collapseToggle(item.elem, item.text, className)
     });
 }
 
-
-//-----------------------------------//
-
-
+//:::::::::::::::::::::::::::::::::::://
+let active = null;
 function acc(massive, className) {
     for (i=0;i<massive.length;i++) {
-        collapseUp(massive[i].text);
-        listenClick(massive[i], className);  
+        collapseUp(massive[i].text);                //collapse texts
+        listenClick(massive, massive[i], className, i);      //click listener
     };
 }
 acc(featureArr, "feature--active");
+//:::::::::::::::::::::::::::::::::::://
+
+//==============================================//
