@@ -1,1 +1,1 @@
-github pages - [SOS - Gaming site](https://thedanielair.github.io/
+github pages - [SOS - Gaming site](https://thedanielair.github.io/sos)
