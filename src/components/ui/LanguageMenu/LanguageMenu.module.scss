@@ -1,0 +1,94 @@
+.menu {
+  padding: 8px 20px 8px 0;
+  position: relative;
+  .status {
+    font-family: var(--font-open-sans), sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 122%;
+    text-transform: capitalize;
+    color: $color-white;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s ease;
+    background: 0;
+  }
+}
+
+.current {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.body {
+  position: absolute;
+  top: 40px;
+  left: -10px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 30px 5px 10px;
+  background-color: $color-background;
+  border-radius: 3px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.icon {
+  position: absolute;
+  left: 40px;
+  width: 22px;
+  height: 7px;
+  transition: all 0.3s ease;
+  text-align: center;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 12px;
+    height: 3px;
+    background-color: $color-white;
+    transform: rotate(45deg) translateY(-50%);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 12px;
+    height: 3px;
+    background-color: $color-white;
+    transform: rotate(-45deg) translateY(-50%);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+}
+
+.active {
+  .icon {
+    left: 40px;
+    width: 14px;
+  }
+
+  .body {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    .status {
+        &:hover {
+            transform: scale(1.05);
+          }
+    }
+  }
+
+}
