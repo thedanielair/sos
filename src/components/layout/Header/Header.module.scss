@@ -1,0 +1,46 @@
+.header {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.nav {
+  flex: 1 1 auto;
+  justify-content: space-around;
+  padding-inline: 10%;
+}
+
+.social {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.language {
+  margin-right: 25px;
+}
+
+.icon {
+  color: #ffb548;
+}
+
+.playground {
+  margin-right: 12px;
+  &:last-child {
+    margin-right: 0;
+  }
+}

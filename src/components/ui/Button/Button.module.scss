@@ -1,0 +1,33 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-open-sans), sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  color: $color-black;
+  text-align: center;
+  width: 260px;
+  height: 60px;
+  background: $gradient-gold;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 3px 3px 35px $color-shadow;
+    // box-shadow: 5px 5px 35px #69150d69;
+    // transform: scale(1.02);
+  }
+}
+
+.title {
+  margin-right: 12px;
+}
+
+.divide {
+  height: 23px;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: rotate(-3deg);
+  margin-right: 15px;
+}

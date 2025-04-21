@@ -1,0 +1,17 @@
+$color-white: #ffffff;
+$color-black: #000000;
+$color-background: #08121b;
+$color-details: #ffb548;
+$color-shadow: #ffcc5f3b;
+
+$gradient-gold: linear-gradient(194.68deg, #ffb548 11.27%, #f39a34 90.4%);
+
+:root {
+  --font-bebas: var(--font-bebas-neue);
+  --font-open-sans: "Open Sans";
+}
+
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;

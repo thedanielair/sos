@@ -1,0 +1,85 @@
+.quote {
+  width: 452px;
+  padding: 15px 21px 21px 17px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.title {
+  font-family: "Bebas Neue", cursive;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  color: #ffb548;
+}
+
+.twitter {
+  margin-left: auto;
+  align-self: flex-start;
+  padding-top: 9px;
+  color: rgba(255, 255, 255, 0.3);
+  width: 27px;
+  height: 27px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.text {
+  margin-bottom: 10px;
+}
+
+.date {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 122%;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 122%;
+  text-align: justify;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.imgWrapper {
+  position: relative;
+  margin-right: 23px;
+  &::before {
+    position: relative;
+    content: "";
+    display: block;
+    background-color: #ffb548;
+  }
+}
+
+.img {
+  position: absolute;
+  top: -4px;
+  left: -8px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.imgWrapper::before,
+.img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
