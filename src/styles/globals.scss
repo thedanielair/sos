@@ -1,0 +1,39 @@
+@import "./utils/mixins";
+@import "./utils/variables";
+@import "./base/reset";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-background;
+}
+
+
+
+.title {
+  font-family: var(--font-bebas), cursive;
+  font-size: 80px;
+  line-height: 100%;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: $color-white;
+}
+.caption {
+  font-family: var(--font-bebas), cursive;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 2px;
+  color: $color-white;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-family: var(--font-open-sans), sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 122%;
+  color: $color-white;
+}
