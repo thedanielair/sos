@@ -1,0 +1,9 @@
+.container {
+  // width: min(100% - 2 * $gap-fluid, $container-max-width);
+  max-width: 1200px;
+  margin-inline: auto;
+
+  // @container (width < $bp-md) {
+  //   padding-inline: $gap-sm;
+  // }
+}
