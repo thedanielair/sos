@@ -2,13 +2,10 @@ import { RequirementsItem } from "@/components/ui/RequitementsItem/RequitementsI
 import styles from "./RequirementsSection.module.scss";
 import { Container } from "@/components/layout/Container/Container";
 
-interface RequirementItem {
-  title: string;
-  text: string;
-}
 
 export const RequirementsSection = () => {
-  const systemRequirements: RequirementItem[] = [
+
+  const systemRequirements = [
     {
       title: "os:",
       text: "Windows 7 64-bit only (No OSX support at this time)"
@@ -31,6 +28,7 @@ export const RequirementsSection = () => {
     },
   ];
 
+  
   return (
     <section className={styles.requirements}>
       <Container className={styles.container}>
